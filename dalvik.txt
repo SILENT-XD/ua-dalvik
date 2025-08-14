@@ -163,7 +163,6 @@ Dalvik/2.1.0 (Linux; U; Android 9; SM-N950F Build/PPR1.180610.011) [FBAN/Orca-An
 Dalvik/2.1.0 (Linux; U; Android 13; SM-A325F Build/TP1A.220624.014) [FBAN/Orca-Android;FBAV/401.0.0.14.97;FBPN/com.facebook.orca;FBLC/in_ID;FBBV/458201858;FBCR/3SinyalKuatHemat;FBMF/samsung;FBBD/samsung;FBDV/SM-A325F;FBSV/13;FBCA/arm64-v8a:null;FBDM/{density=2.625,width=1080,height=2194};FB_FW/1;] FBBK/1
 [FBAN/FB4A;FBAV/407.0.0.30.97;FBBV/458543270;FBDM/{density=2.625,width=1080,height=2194};FBLC/id_ID;FBRV/461506999;FBCR/3SinyalKuatHemat;FBMF/samsung;FBBD/samsung;FBPN/com.facebook.katana;FBDV/SM-A325F;FBSV/13;FBOP/1;FBCA/arm64-v8a:;]
 Dalvik/2.1.0 (Linux; U; Android 11; SM-A205F Build/RP1A.200720.012) [FBAN/FB4A;FBAV/390.0.0.27.105;FBPN/com.facebook.katana;FBLC/in_ID;FBBV/412137088;FBCR/XL Axiata;FBMF/samsung;FBBD/samsung;FBDV/SM-A205F;FBSV/11;FBCA/arm64-v8a:null;FBDM/{density=1.75,width=720,height=1423};FB_FW/1;FBRV/415887650;] FBBK/1
-
 Dalvik/2.1.0 (Linux; U; Android 10; M2102K1G Build/QQ3A.200805.001) [FBAN/Orca-Android;FBAV/410.0.0.17.85;FBPN/com.facebook.orca;FBLC/in_ID;FBBV/477787569;FBCR/null;FBMF/Xiaomi;FBBD/Xiaomi;FBDV/M2102K1G;FBSV/10;FBCA/arm64-v8a:null;FBDM/{density=2.0,width=1080,height=2128};FB_FW/1;] FBBK/1
 Dalvik/2.1.0 (Linux; U; Android 11; CPH2307 Build/SP1A.220624.014.A7C845) [FBAN/FB4A;FBAV/316.0.0.15.19;FBPN/com.facebook.katana;FBLC/en_US;FBBV/358944572;FBCR/Smartfren;FBMF/oppo;FBBD/oppo;FBDV/CPH2307;FBSV/30;FBCA/x86;FBDM/{density=2.8125,width=720,height=8};FB_FW/1;FBRV/602298106;] FBBK/1
 Dalvik/2.1.0 (Linux; U; Android 10; SM-A505F Build/QP1A.190711.020) [FBAN/FB4A;FBAV/310.0.0.10.15;FBPN/com.facebook.katana;FBLC/en_US;FBBV/340123456;FBCR/Telkomsel;FBMF/samsung;FBBD/samsung;FBDV/SM-A505F;FBSV/29;FBCA/arm64-v8a;FBDM/{density=2.75,width=1080,height=2280};FB_FW/1;FBRV/580123456;] FBBK/1
@@ -380,3 +379,4 @@ Dalvik/2.1.0 (Linux; U; Android 8.1.0; Infinix Hot S3 Build/OPM1.171019.011) [FB
 Dalvik/2.1.0 (Linux; U; Android 9.0; Xiaomi Mi Play Build/PKQ1.180904.001) [FBAN/EMA;FBBV/461931070;FBAV/349.0.0.8.103;FBDV/Xiaomi Mi Play;FBSV/9.0;FBCX/notifications_push_client_sync_graphql;FBDM/{density=2.5}]
 Dalvik/2.1.0 (Linux; U; Android 10; SAMSUNG-SM-A705F Build/QP1A.190711.020) [FBAN/EMA;FBBV/461931070;FBAV/349.0.0.8.103;FBDV/SAMSUNG-SM-A705F;FBSV/10;FBCX/notifications_push_client_sync_graphql;FBDM/{density=3.0}]
 Dalvik/2.1.0 (Linux; U; Android 12; Pixel 6 Pro Build/SD1A.210817.023) [FBAN/EMA;FBBV/461931070;FBAV/349.0.0.8.103;FBDV/Pixel 6 Pro;FBSV/12;FBCX/notifications_push_client_sync_graphql;FBDM/{density=3.5}]
+
