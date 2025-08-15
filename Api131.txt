@@ -1,0 +1,130 @@
+import random
+
+# Tentukan nama file
+file_path = '/sdcard/ua.txt'
+
+# Kosongkan file terlebih dahulu sebelum menulis
+try:
+    with open(file_path, 'w') as file:
+        pass
+except IOError as e:
+    print(f"Error: Tidak bisa mengakses file di {file_path}. Pastikan direktori ada dan izinnya benar.")
+    exit()
+
+print(f"Menghasilkan 10 user agent dan menyimpannya di {file_path}...")
+
+# Mulai loop untuk membuat user agent
+for _ in range(10):
+    rc = random.choice
+    rr = random.randint
+
+    # Dalvik and Android version
+    dalvik_version = "2.1.0"
+    android_versions = [f"Android {i}" for i in range(10, 15)]
+    android_version = rc(android_versions)
+
+    # Device Models
+    device_models_data = {
+        "samsung": {
+            "models": ["SM-A135F", "SM-G998B", "SM-N986U", "SM-A525F", "SM-S908E"],
+            "build_prefixes": ["TP1A", "QP1A", "RP1A", "SP1A", "UP1A"]
+        },
+        "xiaomi": {
+            "models": ["Redmi Note 11", "2201116PG", "POCO M4 Pro"],
+            "build_prefixes": ["SKQ1", "RKQ1", "QKQ1"]
+        },
+        "google": {
+            "models": ["Pixel 6", "Pixel 7", "Pixel 8"],
+            "build_prefixes": ["AP1A", "TQ3A", "UP1A"]
+        },
+        "vivo": {
+            "models": ["vivo 2109", "V2130", "V2149"],
+            "build_prefixes": ["SP1A", "TP1A"]
+        },
+        "oppo": {
+            "models": ["CPH2271", "CPH2307", "CPH2381"],
+            "build_prefixes": ["RP1A", "SP1A"]
+        }
+    }
+
+    brand = rc(list(device_models_data.keys()))
+    device_model = rc(device_models_data[brand]["models"])
+    build_prefix = rc(device_models_data[brand]["build_prefixes"])
+    build_suffix = ''.join(random.choices('0123456789ABCDEF', k=6))
+    build_number = f"{build_prefix}.220624.014.{build_suffix}"
+
+    # Facebook App Version
+    fb_av_major = rr(300, 500)
+    fb_av_minor = rr(0, 20)
+    fb_av_patch = rr(0, 50)
+    fb_av = f"{fb_av_major}.0.0.{fb_av_minor}.{fb_av_patch}"
+
+    # FBPN (Package Name)
+    fb_pn = "com.facebook.katana"
+
+    # FBLC (Locale)
+    locales = [
+        "in_ID", "en_US", "en_GB", "id_ID", "ms_MY", "th_TH", "vi_VN",
+        "pt_BR", "es_LA", "fr_FR", "de_DE", "ja_JP", "ko_KR"
+    ]
+    fb_lc = rc(locales)
+
+    # FBBV (Facebook Build Version)
+    fb_bv = str(rr(100000000, 999999999))
+
+    # FBCR (Carrier)
+    carriers = [
+        "null", "Telkomsel", "XL Axiata", "Indosat Ooredoo", "Smartfren",
+        "AT&T", "Verizon", "T-Mobile", "Vodafone", "O2"
+    ]
+    fb_cr = rc(carriers)
+
+    # FBMF/FBBD (Manufacturer/Brand)
+    fb_mf = brand
+    fb_bd = brand
+
+    # FBDV (Device)
+    fb_dv = device_model
+
+    # FBSV (Android SDK Version)
+    sdk_versions_map = {
+        "Android 10": "29", "Android 11": "30", "Android 12": "31",
+        "Android 13": "33", "Android 14": "34"
+    }
+    fb_sv = sdk_versions_map.get(android_version, "33")
+
+    # FBCA (CPU Architecture)
+    cpu_archs = ["armeabi-v7a:armeabi", "arm64-v8a", "x86", "x86_64"]
+    fb_ca = rc(cpu_archs)
+
+    # FBDM (Device Metrics)
+    densities = ["2.0", "2.8125", "3.0", "3.5", "4.0"]
+    widths = ["720", "1080", "1440"]
+    heights_map = {
+        "720": ["1280", "1480"],
+        "1080": ["1920", "2208", "2400"],
+        "1440": ["2560", "2880", "3200"]
+    }
+    selected_width = rc(widths)
+    selected_height = rc(heights_map.get(selected_width, ["1920"]))
+    fb_dm = f"{{density={rc(densities)},width={selected_width},height={rc(selected_height)}}}"
+
+    # FBRV (Facebook Revision Number)
+    fb_rv = str(rr(500000000, 999999999))
+
+    # FBBK (Facebook App Kind)
+    fb_bk = "1"
+
+    # Membuat string user agent
+    user_agent_string = (
+        f"Dalvik/{dalvik_version} (Linux; U; {android_version}; {device_model} Build/{build_number}) "
+        f"[FBAN/FB4A;FBAV/{fb_av};FBPN/{fb_pn};FBLC/{fb_lc};FBBV/{fb_bv};"
+        f"FBCR/{fb_cr};FBMF/{fb_mf};FBBD/{fb_bd};FBDV/{fb_dv};FBSV/{fb_sv};"
+        f"FBCA/{fb_ca};FBDM/{fb_dm};FB_FW/1;FBRV/{fb_rv};] FBBK/{fb_bk}"
+    )
+
+    # Menulis string user agent ke file
+    with open(file_path, 'a') as file:
+        file.write(f'{user_agent_string}\n\n')
+
+print("Selesai.")
